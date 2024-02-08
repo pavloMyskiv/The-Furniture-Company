@@ -3,8 +3,8 @@
 import { Box, Container, Typography } from '@mui/material';
 
 const footerText = {
-    copyright:'Copyright © 2024 Furniture Store',
-    powered:'Powered by Furniture Store'
+    copyright:'Copyright © 2024 Furniture Company',
+    powered:'Powered by Furniture Company'
 }
 
 const Footer: React.FC = () => {
