@@ -1,0 +1,28 @@
+
+шаблон додавання продукту
+
+const handleClick = ()=>{
+  const productsRef = collection(firestore, "products");
+products.forEach(async(product)=>{
+  await setDoc(doc(productsRef, product.id),product)
+  console.log(product.name + 'added')
+})
+ }
+
+ <button onClick={handleClick}>push</button>
+
+ шаблон отримання одного продукту
+
+ const getProduct = async () => {
+    const databaseRef = doc(firestore, 'products', '');
+    const databaseSnap = await getDoc(databaseRef);
+    if (databaseSnap.exists()) {
+      console.log(databaseSnap.data());
+    }
+  };
+  getProduct();
+
+
+      https://images.unsplash.com/photo-1634712282287-14ed57b9cc89?q=80&w=1812&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+
+      https://images.unsplash.com/photo-1634643836960-c345b3c3e998?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
