@@ -2,6 +2,11 @@
 
 import { Box, Container, Typography } from '@mui/material';
 
+const footerText = {
+    copyright:'Copyright © 2024 Furniture Store',
+    powered:'Powered by Furniture Store'
+}
+
 const Footer: React.FC = () => {
   return (
     <Container sx={{ backgroundColor: 'grey', mt: 5, height: '7em' }}>
@@ -12,10 +17,10 @@ const Footer: React.FC = () => {
         pt={2}
       >
         <Typography variant="body2" component="p">
-          Copyright © 2024 Furniture Store
+          {footerText.copyright}
         </Typography>
         <Typography variant="body2" component="p">
-          Powered by Furniture Store
+          {footerText.powered}
         </Typography>
       </Box>
     </Container>
