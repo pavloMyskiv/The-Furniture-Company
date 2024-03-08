@@ -1,6 +1,6 @@
 /** @format */
 
-import { Menu } from '@mui/icons-material';
+import { Close, Menu } from '@mui/icons-material';
 import { Box, Button, Divider, Drawer, IconButton } from '@mui/material';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
@@ -33,10 +33,23 @@ const NavMenu: React.FC<NavMenuT> = ({ pages }) => {
           <Menu />
         </IconButton>
       </Box>
-      <Drawer PaperProps={{variant:'outlined', sx:{background:'gray'}, elevation:0}} anchor="left" open={openNavMenu} onClose={handleCloseNavMenu}>
+      <Drawer
+        PaperProps={{
+          variant: 'outlined',
+          elevation: 0,
+        }}
+        anchor="left"
+        open={openNavMenu}
+        onClose={handleCloseNavMenu}
+      >
+        <Box>
+          <IconButton color="error" onClick={handleCloseNavMenu}>
+            <Close />
+          </IconButton>
+        </Box>
         {pages.map((page) => {
           return (
-            <Box key={page} >
+            <Box key={page}>
               <Link to={`${AppRoutes.get(page)}`}>
                 <Button
                   variant="text"

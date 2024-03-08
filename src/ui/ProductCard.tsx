@@ -12,12 +12,18 @@ import {
 } from '@mui/material';
 import { ProductType } from '../types/ProductType';
 import { DocumentData } from 'firebase/firestore';
+import { useAppDispatch } from '../hooks/storeHooks';
+import { addItem } from '../store/slices/cartSlice';
 
 type ProductCardProp = {
   product: ProductType | DocumentData;
 };
 
 const ProductCard: React.FC<ProductCardProp> = ({ product }) => {
+  const dispatch = useAppDispatch()
+  const addProduct = ()=>{
+    dispatch(addItem({...product}))
+  }
   return (
     <Container  sx={{maxWidth:{xs:'300px', sm:'400px'}, my:1}}>
       <Badge badgeContent={`-${product.sale}%`} color="error">
@@ -44,8 +50,8 @@ const ProductCard: React.FC<ProductCardProp> = ({ product }) => {
             <Typography
               component="p"
               variant="body2"
-              color="grey"
               textAlign="center"
+              fontStyle='italic'
             >
               {product.category}
             </Typography>
@@ -60,7 +66,7 @@ const ProductCard: React.FC<ProductCardProp> = ({ product }) => {
                 <Typography
                   component="span"
                   variant="body2"
-                  sx={{ textDecoration: 'line-through red', color: 'grey' }}
+                  sx={{ textDecoration: 'line-through red'}}
                 >
                   ${product.price}{' '}
                 </Typography>
@@ -75,7 +81,7 @@ const ProductCard: React.FC<ProductCardProp> = ({ product }) => {
             </Typography>
           </CardContent>
           <CardActions>
-            <Button variant="contained" color="success">
+            <Button onClick={addProduct} variant="contained" color="success">
               Add to cart
             </Button>
           </CardActions>

@@ -1,14 +1,14 @@
 /** @format */
 
 import { AppBar, Toolbar, Typography, Container } from '@mui/material';
-import Cart from './conponents/Cart/Cart';
+import Cart from './conponents/Cart';
 import NavMenu from './conponents/NavMenu';
 
 const pages = ['home', 'products', 'about'];
 
 const Header: React.FC = () => {
   return (
-    <AppBar position="static" sx={{ margin: 0 }}>
+    <AppBar position="sticky" sx={{ margin: 0 }}>
       <Container>
         <Toolbar disableGutters>
           <Typography

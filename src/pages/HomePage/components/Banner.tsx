@@ -27,7 +27,7 @@ const Banner: React.FC<BanerT> = ({ title, btn_text, bg_image }) => {
           component="h2"
           variant="h3"
           sx={{ maxWidth: { sx: '100%', sm: '50%' }, textWrap: 'pretty' }}
-          color={'white'}
+          color='secondary'
           fontWeight={600}
         >
           {title}
@@ -36,7 +36,7 @@ const Banner: React.FC<BanerT> = ({ title, btn_text, bg_image }) => {
           <Button
             variant="outlined"
             sx={{ fontWeight: 600 }}
-            color="primary"
+            color="secondary"
           >
             {btn_text}
           </Button>

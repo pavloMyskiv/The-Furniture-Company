@@ -7,4 +7,6 @@ export type ProductType = {
     price: number;
     sale: number;
     stock: number;
-    } 
+    } | { [field: string]: any; }
+
+export type  CartItemType = ProductType & {count: number}

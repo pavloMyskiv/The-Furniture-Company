@@ -39,7 +39,6 @@ const CardsCollection: React.FC<CardsCollectionT> = ({ bg_image, cards }) => {
                   xs: 'column',
                   sm: 'row',
                 },
-                gap: 1,
                 '&:nth-of-type(odd)': {
                   flexDirection: {
                     xs: 'column',
